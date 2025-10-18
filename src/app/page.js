@@ -53,7 +53,7 @@ export default function Home() {
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.5 }}
-        className="mt-10 w-full max-w-lg flex items-center gap-3 z-10"
+        className="my-10 w-full max-w-lg flex items-center gap-3 z-10"
       >
         <div className="relative w-full">
           <Input
@@ -61,9 +61,9 @@ export default function Home() {
             placeholder="Search anything... (Try typos!)"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full rounded-2xl bg-[#120020]/70 text-white border border-purple-700/40 focus:border-purple-500 placeholder-gray-400 shadow-lg shadow-purple-900/20"
+            className="w-full py-5 rounded-2xl bg-[#120020]/70 text-white border border-purple-700/40 focus:border-purple-500 placeholder-gray-400 shadow-lg shadow-purple-900/20"
           />
-          <Search className="absolute cursor-pointer right-3 top-2.5 text-purple-400" size={22} />
+          <Search className="absolute cursor-pointer right-3 top-2 text-purple-400" size={22} />
         </div>
       </motion.form>
 
