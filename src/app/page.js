@@ -161,7 +161,6 @@ export default function Home() {
       >
         {results.length === 0 ? (
           <p className="text-gray-400 text-center col-span-full">
-            No results found. Try searching for "Harry Potter" or "The Hobbit".
           </p>
         ) : (
           results.map((hit, i) => {
@@ -169,25 +168,25 @@ export default function Home() {
             return (
               <motion.div key={i} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
                 <Card className="bg-gradient-to-br from-[#1b0030] via-[#24003b] to-[#160028] border border-purple-700/40 shadow-lg shadow-purple-900/40 rounded-2xl overflow-hidden hover:shadow-purple-500/40 transition-all duration-300">
-                  <CardContent className="p-6 flex flex-col items-center text-center">
+                  <CardContent className="p-2 flex flex-col items-center text-center">
                     {r.image_url && (
                       <img
                         src={r.image_url}
                         alt={r.title}
-                        className="w-32 h-48 object-cover rounded-xl mb-4 shadow-md shadow-purple-900/30"
+                        className="w-32 h-40 object-cover rounded-xl mb-4 shadow-md shadow-purple-900/30"
                       />
                     )}
 
                     <h2
-                      className="text-2xl font-semibold text-purple-300 mb-2"
+                      className="text-lg font-semibold text-purple-300 mb-2"
                       dangerouslySetInnerHTML={{
                         __html: hit.highlight?.title?.snippet || r.title,
                       }}
                     />
-                    <p className="text-gray-400 text-sm mb-3 italic">
+                    <p className="text-gray-400 text-sm mb-1 italic">
                       {Array.isArray(r.authors) ? r.authors.join(", ") : r.authors}
                     </p>
-                    <div className="text-sm text-gray-500 mb-2">
+                    <div className="text-sm text-gray-500 mb-0">
                       📘 {r.publication_year} • ⭐ {r.average_rating.toFixed(2)} (
                       {r.ratings_count.toLocaleString()} ratings)
                     </div>

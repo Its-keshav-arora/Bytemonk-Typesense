@@ -9,11 +9,11 @@ import Typesense from "typesense";
 
 let client = new Typesense.Client({
   'nodes': [{
-    'host': 'localhost', // For Typesense Cloud use xxx.a1.typesense.net
-    'port': 8108,      // For Typesense Cloud use 443
-    'protocol': 'http'   // For Typesense Cloud use https
+    'host': 'localhost',
+    'port': 8108,
+    'protocol': 'http'
   }],
-  'apiKey': '5DcmJ1K7mR2zRh26Ept9J2ttSfH0uUOvfMHc0jSVmXR0W9ce',
+  'apiKey': 'your_api_key',
   'connectionTimeoutSeconds': 2
 })
 
