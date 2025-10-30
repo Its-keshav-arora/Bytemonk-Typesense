@@ -111,26 +111,33 @@ curl -X DELETE "http://localhost:8108/collections/books" \
   -H "X-TYPESENSE-API-KEY: your_api_key_here"
 ```
 
-### Step 6 : Import the data
-Run the file "import_data.js" in the root directory using the following command:
+### Step 6 : Clone repository
+Clone the github repository by the following command : 
+```bash
+git clone https://github.com/Its-keshav-arora/Bytemonk-Typesense.git
+```
+### Step 7 : Install all the dependencies
+Awesome, Now you have the frontend of repo in Next.js , let's install 
+all the required dependencies using the command given below :
+```bash
+npm install
+```
+
+### Step 8 : Start the server :
+Now start the server using the following command : 
+```bash
+npm run dev
+```
+
+
+### Step 9 : Import the data
+Run the file "import_data.js" in the root directory in different
+terminal using the following command:
 ```bash
 node import_data.js
 ```
 
-### Step 7 : Frontend Setup (Next.js)
-Create a Next.js app:
-```bash
-npx create-next-app@latest my-app --yes
-cd my-app
-npm run dev
-```
-
-Install Typesense client:
-```bash
-npm install typesense
-```
-
-### Step 8: Create Product Collection and Import Data
+### Step 10: Create Product Collection and Import Data
 ```bash
 curl -X POST "http://localhost:8108/collections" \
 -H "X-TYPESENSE-API-KEY: your_api_key" \
