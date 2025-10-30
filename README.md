@@ -137,41 +137,12 @@ terminal using the following command:
 node import_data.js
 ```
 
-### Step 10: Create Product Collection and Import Data
-```bash
-curl -X POST "http://localhost:8108/collections" \
--H "X-TYPESENSE-API-KEY: your_api_key" \
--H "Content-Type: application/json" \
--d '{
-  "name": "products",
-  "fields": [
-    {"name": "id", "type": "string"},
-    {"name": "name", "type": "string"},
-    {"name": "description", "type": "string"},
-    {"name": "price", "type": "float"}
-  ],
-  "default_sorting_field": "price"
-}'
-```
-
-Import sample product data:
-```bash
-curl -X POST "http://localhost:8108/collections/products/documents/import?action=create" \
--H "X-TYPESENSE-API-KEY: xyz" \
--H "Content-Type: application/jsonl" \
---data-binary @- <<EOF
-{"id": "1", "name": "Quantum Keyboard", "description": "Futuristic mechanical keyboard with RGB lighting", "price": 129.99}
-{"id": "2", "name": "Pixel Drone", "description": "Compact photography drone with 4K recording", "price": 499.00}
-...
-EOF
-```
-
 Now you can search your products instantly — even with typos like:
 ```bash
 "pixl dron" → "Pixel Drone"
 ```
 
-### Step 9: Enable Semantic Search (AI Embeddings)
+### Step 10: Enable Semantic Search (AI Embeddings)
 Create a collection with embedding support:
 ```bash
 curl -X POST "http://localhost:8108/collections" \
